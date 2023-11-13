@@ -32,8 +32,8 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_01_113942) do
   end
 
   create_table "aws_data_centers", force: :cascade do |t|
-    t.integer "aws_vpc"
-    t.integer "aws_region"
+    t.integer "aws_vpc_id"
+    t.integer "aws_region_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -73,7 +73,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_01_113942) do
     t.string "family_type"
     t.string "disk"
     t.integer "account_id"
-    t.integer "vpc_id"
+    t.integer "aws_vpc_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

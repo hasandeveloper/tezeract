@@ -5,7 +5,6 @@ class CreateAwsVpcs < ActiveRecord::Migration[7.1]
       t.text :ipv4_cidr_block
       t.string :tenancy
       t.integer :account_id
-
       t.timestamps
     end
   end

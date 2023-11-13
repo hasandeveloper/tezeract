@@ -1,5 +1,5 @@
 class AwsRegion < ApplicationRecord
   has_many :aws_availability_zones
-  has_one :aws_data_center
-  has_one :aws_vpc, through: :aws_data_center
+  has_many :aws_data_centers
+  has_many :aws_vpcs, through: :aws_data_centers
 end
