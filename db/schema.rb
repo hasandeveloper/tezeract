@@ -25,7 +25,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_01_113942) do
 
   create_table "aws_availability_zones", force: :cascade do |t|
     t.string "name"
-    t.integer "region_id"
+    t.integer "aws_region_id"
     t.boolean "is_available"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -39,8 +39,8 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_01_113942) do
   end
 
   create_table "aws_opted_availability_zones", force: :cascade do |t|
-    t.integer "aws_vpc"
-    t.integer "aws_availability_zone"
+    t.integer "aws_vpc_id"
+    t.integer "aws_availability_zone_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

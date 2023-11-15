@@ -54,4 +54,19 @@ aws_data_center = AwsDataCenter.create do |aws_data_center|
   aws_data_center.aws_region_id = aws_region.id
 end
 
-binding.pry
+#AwsDataCenter.first.destroy
+
+aws_availability_zone =  AwsAvailabilityZone.create do |aws_availability_zone|
+  aws_availability_zone.name = "ap-south-1"
+  aws_availability_zone.aws_region_id = aws_region.id
+  aws_availability_zone.is_available = true
+end
+
+#AwsAvailabilityZone.first.destroy
+
+aws_opted_availability_zone = AwsOptedAvailabilityZone.create do |aws_opted_availability_zone|
+  aws_opted_availability_zone.aws_vpc_id = aws_vpc.id
+  aws_opted_availability_zone.aws_availability_zone_id = aws_availability_zone.id
+end
+
+#AwsOptedAvailabilityZone.first.destroy
